@@ -15,7 +15,7 @@ export default function HeroSection() {
         <div className="w-full max-w-[1200px] justify-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10 items-center text-white">
           {/* LEFT SIDE */}
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-5xl pt-24 md:text-6xl font-bold leading-tight">
               You Envision, <br />
               We{" "}
               <span className="text-[#98bc62]">
@@ -35,7 +35,7 @@ export default function HeroSection() {
             </p>
 
             {/* BUTTONS */}
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex sm:font-light gap-4">
               <Link to={"/contact-us"}>
                 <button className="px-6 py-3 border border-[#2c5e2b] rounded-full bg-white text-sm text-[#2c5e2b] hover:bg-[#2c5e2b] hover:text-[#ffff] transition">
                   Let's Talk Together
