@@ -53,7 +53,7 @@ export default function OurTeam() {
     <main className={`min-h-screen w-full bg-[${lightBg}] text-[${primaryColor}] overflow-hidden`}>
       {/* HERO SECTION */}
       <section className="w-full pt-28 px-10 text-center relative">
-        <h1 className={`text-6xl font-extrabold my-6 text-[${primaryColor}]`}>Meet Our Visionaries</h1>
+        <h1 className={`text-5xl sm:text-6xl font-extrabold my-6 text-[${primaryColor}]`}>Meet Our Visionaries</h1>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
           A group of passionate professionals dedicated to building stunning digital experiences that inspire, engage, and deliver meaningful business results.
         </p>
