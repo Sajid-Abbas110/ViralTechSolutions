@@ -97,11 +97,12 @@ export default function ProjectsSection() {
 
       {/* View All Button */}
       <div className="text-center mt-20">
-        <Link to={"/portfolio"}>
-          <button className="px-7 py-3 font-medium border-2 border-[#2c5e2b] rounded-full text-sm text-[#2c5e2b] hover:bg-[#2c5e2b] hover:text-white transition shadow-md hover:shadow-lg">
-            View All Projects
-          </button>
-        </Link>
+        <Link
+              to={"/portfolio"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
+              View All Projects
+            </Link>
       </div>
     </section>
   );

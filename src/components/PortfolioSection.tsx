@@ -20,7 +20,7 @@ const WebDevelopmentSection: React.FC = () => {
         </div>
 
         {/* Right Column: Description */}
-        <div className="lg:w-1/2 text-center mt-20 lg:text-left">
+        <div className="lg:w-1/2 text-center lg:mt-20 lg:text-left">
           <p className="text-lg text-gray-200 max-w-xl mb-8">
             We build beautiful, engaging experiences that drive real business
             results by combining refined aesthetics, seamless usability, and

@@ -16,11 +16,12 @@ const Innovative = () => {
           strategies and technology that make a real impact.
         </p>
         <div className="flex justify-center md:justify-start">
-          <Link to={"/contact-us"}>
-            <button className="px-5 py-2 border-2 border-[#2c5e2b] rounded-full text-sm text-[#98bc62] hover:bg-[#2c5e2b] hover:text-[white] transition">
-              Let’s Build Together
-            </button>
-          </Link>
+          <Link
+              to={"/portfolio"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
+             Let’s Build Together
+            </Link>
         </div>
       </div>
 

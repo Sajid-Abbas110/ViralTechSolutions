@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
             lg:text-6xl 
             font-extrabold 
             text-white 
-            leading-tight 
+            leading-snug
             mb-6
           "
         >

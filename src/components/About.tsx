@@ -85,9 +85,12 @@ export default function EnterpriseSection() {
             experience. Let’s touch the horizons with digitalization.
           </p>
           <Link to={"/portfolio"}>
-            <button className="px-5 py-2 border border-[#2c5e2b] rounded-full text-sm text-[#98bc62] hover:bg-[#2c5e2b] hover:text-[white] transition">
+            <Link
+              to={"/portfolio"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
               Learn More
-            </button>
+            </Link>
           </Link>
         </div>
 

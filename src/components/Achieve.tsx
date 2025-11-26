@@ -101,7 +101,7 @@ const FeatureSection: React.FC = () => {
             </p>
 
             {/* CTA BUTTON */}
-            <button className="px-8 py-3 border-2 border-[#2c5e2b] rounded-full text-md text-[#98bc62] hover:bg-[#2c5e2b] hover:text-[white] transition w-[260px] md:w-[280px]">
+            <button className="px-8 py-3 border-2 bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition w-[260px] md:w-[280px]">
               Let’s Build Together
             </button>
 

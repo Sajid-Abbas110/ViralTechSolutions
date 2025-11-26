@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ProjectsSection() {
   return (
     <section className="w-full bg-white px-6 my-5 md:px-12 lg:px-20">
@@ -73,9 +75,12 @@ export default function ProjectsSection() {
       </div>
 
       <div className="text-center mt-20">
-        <button className="px-5 py-2 border-2 border-[#2c5e2b] rounded-full text-sm text-[#98bc62] hover:bg-[#2c5e2b] hover:text-[white] transition">
-          VIEW ALL CASE STUDIES
-        </button>
+        <Link
+              to={"/contact-us"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
+            Wiew Portfolio
+            </Link>
       </div>
     </section>
   );

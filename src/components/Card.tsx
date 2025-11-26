@@ -141,9 +141,10 @@ const PortfolioSection: React.FC = () => {
           <div className="text-center mt-16">
             <button
               onClick={handleLoadMore}
-              className="px-8 py-3 border-2 rounded-full text-lg text-[#2b3d0f] hover:bg-[#2c5e2b] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
             >
-              Load More
+              Get Started Today
             </button>
           </div>
         )}

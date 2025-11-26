@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function OurTeam() {
   const team = [
@@ -137,12 +138,12 @@ export default function OurTeam() {
           We're always looking for talented individuals to join our growing family. Let's build something extraordinary together.
         </p>
 
-        <a
-          href="#"
-          className={`px-10 py-4 text-lg font-semibold rounded-full bg-[${accentColor}] text-white border-2 border-[${accentColor}] hover:bg-[${primaryColor}] hover:border-[${primaryColor}] transition-all duration-300 shadow-lg hover:shadow-xl`}
-        >
-          Join Our Team
-        </a>
+        <Link
+              to={"/contact-us"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
+              Join Our Team
+            </Link>
 
         {/* background shapes */}
         <div className={`absolute left-0 bottom-0 w-40 h-40 bg-[${accentColor}]/20 blur-2xl`}></div>

@@ -56,9 +56,12 @@ const ServicesSection: React.FC = () => {
           propelling business towards unparalleled success.
         </p>
 
-        <button className="px-5 py-2 border border-[#2c5e2b] rounded-full text-sm text-[#98bc62] hover:bg-[#2c5e2b] hover:text-white transition">
-          Let's Build Together
-        </button>
+        <Link
+              to={"/contact-us"}
+              className="px-5 py-3 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
+            >
+            Let’s Build Together
+            </Link>
       </div>
 
       {/* RIGHT SIDE */}
@@ -84,7 +87,7 @@ const ServicesSection: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-block mt-4 px-5 py-2 border border-[#2c5e2b] text-[#2c5e2b] rounded-full text-sm hover:bg-[#2c5e2b] hover:text-white transition"
+              className="inline-block mt-4 px-5 py-2 border bg-[#2c5e2b] hover:border-[#2c5e2b] rounded-full text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition"
             >
               Get Started Today
             </Link>

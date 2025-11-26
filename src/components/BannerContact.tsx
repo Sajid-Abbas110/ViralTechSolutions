@@ -1,10 +1,18 @@
 
 export default function ContactUs() {
   return (
-    <section className="min-h-screen w-full bg-[url('/contact.jpg')] flex items-center p-10 relative overflow-hidden">
+    <section className="min-h-screen w-full bg-[url('/contact.jpg')] flex items-center justify-center justify-items-center p-10 relative overflow-hidden">
 
       <div className="max-w-full z-10">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+        <h1 className="text-3xl 
+            sm:text-4xl 
+            md:text-5xl 
+            lg:text-6xl 
+            font-extrabold 
+            text-white 
+            leading-snug
+            sm:pt-4
+            mb-6">
           Revolutionizing Your Digital Experience with Our <span className="text-[#98bc62]">Contact & Support</span>
         </h1>
 

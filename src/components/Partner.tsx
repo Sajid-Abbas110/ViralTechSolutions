@@ -59,11 +59,10 @@ const CallToActionSection: React.FC = () => {
         </p>
 
         {/* Green CTA Button */}
-        <button
-          className="mt-10 px-12 py-4 font-bold text-lg rounded-xl text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-          style={{ backgroundColor: PRIMARY_DARK }}
+       <button
+          className="mt-10 px-12 py-4 rounded-full bg-[#2c5e2b] hover:border-[#2c5e2b] text-sm text-white hover:bg-[#ffff] hover:text-[#2c5e2b] transition-all duration-300 transform hover:scale-105"
         >
-          JOIN US
+          Join Us Now
         </button>
       </div>
 
