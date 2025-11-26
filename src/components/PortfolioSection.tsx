@@ -14,14 +14,14 @@ const WebDevelopmentSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start">
         {/* Left Column: Title */}
         <div className="lg:w-1/2 my-10 lg:mb-0 lg:pr-10 text-center lg:text-left">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
             Welcome To <span className="text-[#98bc62]">Our Portfolio</span>
           </h1>
         </div>
 
         {/* Right Column: Description */}
         <div className="lg:w-1/2 text-center lg:mt-20 lg:text-left">
-          <p className="text-lg text-gray-200 max-w-xl mb-8">
+          <p className="text-lg text-gray-200 max-w-xl mt-5">
             We build beautiful, engaging experiences that drive real business
             results by combining refined aesthetics, seamless usability, and
             data-driven strategies to accelerate your business growth.

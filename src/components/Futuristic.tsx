@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HeroSection: React.FC = () => {
   return (
     <div
-      className="relative min-h-screen flex items-center justify-start mt-20 bg-cover bg-center"
+      className="relative min-h-screen flex items-center justify-start pt-20 bg-cover bg-center"
       style={{ backgroundImage: "url('/contact.jpg')" }}
     >
       {/* Dark overlay for readability */}
