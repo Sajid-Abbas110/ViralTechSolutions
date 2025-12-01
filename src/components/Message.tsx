@@ -78,19 +78,41 @@ const ContactSection: FC = () => {
             </h2>
 
             <form className="space-y-4 w-full">
+              
               <FormGroup label="I'm looking for:" isSelect>
+                <div className="max-w-40">
                 <select>
-                  <option value="" disabled selected className="text-gray-800">
+                  <option value="" disabled selected className="bg-[#98bc62] text-white">
                     Select Service
                   </option>
-                  <option value="service1" className="text-gray-800">
-                    Cloud Strategy
+                  <option value="service1" className="bg-[#98bc62] text-white">
+                    Web Development
                   </option>
-                  <option value="service2" className="text-gray-800">
-                    Data Engineering
+                  <option value="service2" className="bg-[#98bc62] text-white">
+                    App Development
+                  </option>
+                  <option value="service3" className="bg-[#98bc62] text-white">
+                    Software Development
+                  </option>
+                  <option value="service4" className="bg-[#98bc62] text-white">
+                    Graphic Designing
+                  </option>
+                  <option value="service5" className="bg-[#98bc62] text-white">
+                    Game Development
+                  </option>
+                  <option value="service6" className="bg-[#98bc62] text-white">
+                    SEO & Content Writing
+                  </option>
+                  <option value="service7" className="bg-[#98bc62] text-white">
+                    Digital Marketing
+                  </option>
+                  <option value="service8" className="bg-[#98bc62] text-white">
+                    UI-UX Designing
                   </option>
                 </select>
+                </div>
               </FormGroup>
+              
 
               <FormGroup label="Full Name*">
                 <input type="text" required />

@@ -151,7 +151,7 @@ const App: FC = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: carouselStyles }} />
-      <div className="min-h-screen bg-gray-50 font-sans py-16 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-[#2c5e2b] leading-tight mb-6">
