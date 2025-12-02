@@ -13,7 +13,7 @@ import SoftwareDevelopment from "./Pages.tsx/SoftwareDevelopment";
 import GameDevelopment from "./Pages.tsx/GameDevelopment";
 import SEOAndContentWriting from "./Pages.tsx/SEOAndContentWriting";
 import DigitalMarketing from "./Pages.tsx/DigitalMarketing";
-import UIUXDesign from "./Pages.tsx/SoftwareDevelopment";
+import UIUXDesign from "./Pages.tsx/UIUXDesign";
 
 
 const App = () => {
