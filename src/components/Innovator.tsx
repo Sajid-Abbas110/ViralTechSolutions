@@ -1,4 +1,5 @@
-import { type FC, useRef, useState } from "react";
+import type { FC } from "react";
+
 import {
   RefreshCw,
   Zap,
@@ -6,186 +7,131 @@ import {
   Target,
   TrendingUp,
   Users,
-  type LucideIcon,
 } from "lucide-react";
-import { useSwipeable } from "react-swipeable";
+import { motion } from "framer-motion";
 
-interface Card {
-  icon: LucideIcon;
-  accent: string;
-  title: string;
-  description: string;
-  bgColor: string;
-  darkText: boolean;
-}
-
-const cardsData: Card[] = [
+const features = [
   {
     icon: RefreshCw,
-    accent: "text-emerald-500",
     title: "Redefine Innovation",
+    accent: "from-emerald-400/40 to-emerald-600/30",
     description:
-      "Innovation is not merely a buzzword for us; it's integrated into our core values. We challenge the status quo while disregarding to settle for the ordinary. We aim to push the boundaries to create opportunities within the digital realm for your enterprise.",
-    bgColor: "bg-white",
-    darkText: false,
+      "We push boundaries with fearless creativity—crafting future-ready solutions through bold digital innovation.",
   },
   {
     icon: Zap,
-    accent: "text-pink-400",
     title: "Legacy of Impact",
+    accent: "from-pink-400/40 to-pink-600/30",
     description:
-      "Beyond our software solutions, our legacy is built on tangible impact and results-driven outcomes. We believe in being the architects of optimizing solutions for your enterprise in order to thrive in the digital age.",
-    bgColor: `bg-white`,
-    darkText: false,
+      "Every product is built to create long-lasting real-world impact—measurable, meaningful, and transformative.",
   },
   {
     icon: Award,
-    accent: "text-sky-400",
     title: "Effective Solutions",
+    accent: "from-sky-400/40 to-sky-600/30",
     description:
-      "We don't just innovate for the change, but we innovate to help you achieve your purpose. Our cloud solutions are crafted with a keen understanding of your objectives to meet the current needs of the industry while anticipating the challenges of the future.",
-    bgColor: "bg-white",
-    darkText: false,
+      "Smart engineering meets purposeful design, delivering efficient solutions tailored for your growth.",
   },
   {
     icon: Target,
-    accent: "text-orange-400",
     title: "Strategic Alignment",
+    accent: "from-orange-400/40 to-orange-600/30",
     description:
-      "Every project starts with a deep dive into your business strategy. We ensure our technology roadmap aligns perfectly with your long-term vision, delivering solutions that are not just cutting-edge but strategically sound.",
-    bgColor: `bg-white`,
-    darkText: false,
+      "We design with your long-term vision in mind—ensuring strategic precision in every step of development.",
   },
   {
     icon: TrendingUp,
-    accent: "text-yellow-400",
     title: "Scalable Growth",
+    accent: "from-yellow-400/40 to-yellow-600/30",
     description:
-      "Our architecture is built for the future. We design systems that scale effortlessly with your business growth, ensuring performance and stability whether you have ten users or ten million. Future-proof your infrastructure with us.",
-    bgColor: `bg-white`,
-    darkText: false,
+      "Future-proof architecture built to handle anything—from 10 users to 10 million.",
   },
   {
     icon: Users,
-    accent: "text-indigo-400",
     title: "Collaborative Partnership",
+    accent: "from-indigo-400/40 to-indigo-600/30",
     description:
-      "We view our clients as true partners. Our agile methodologies prioritize transparent communication and continuous feedback, guaranteeing that the final product is exactly what you envisioned and more.",
-    bgColor: `bg-white`,
-    darkText: false,
+      "We operate like a true partner—transparent, agile, and aligned to your business goals.",
   },
 ];
 
-interface FeatureCardProps {
-  card: Card;
-}
-
-const FeatureCard: FC<FeatureCardProps> = ({ card }) => {
-  const { icon: Icon, accent, title, description, bgColor, darkText } = card;
-  const textColor = darkText ? "text-gray-300" : "text-gray-700";
-  const titleColor = darkText ? "text-white" : "text-gray-900";
-  const iconBg = darkText ? `bg-gray-700/50` : "bg-gray-100";
-
-  return (
-    <div
-      className={`p-8 rounded-xl shadow-lg h-full transition-all duration-300 ${bgColor} ${
-        darkText ? "shadow-2xl shadow-black/40" : "hover:shadow-xl"
-      }`}
-    >
-      <div
-        className={`w-12 h-12 flex items-center justify-center rounded-lg mb-4 text-3xl ${accent} ${iconBg} ring-2 ring-opacity-50 ring-current`}
-      >
-        <Icon size={24} strokeWidth={2.5} />
-      </div>
-      <h3 className={`text-xl font-semibold mb-3 ${titleColor}`}>{title}</h3>
-      <p className={`text-sm leading-relaxed ${textColor}`}>{description}</p>
-    </div>
-  );
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
 };
 
-const App: FC = () => {
-  const allSixCards: Card[] = cardsData;
-  const carouselContent: Card[] = [...allSixCards, ...allSixCards]; // Duplicate for infinite scroll
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
+import { type Variants } from "framer-motion";
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {
-      if (containerRef.current) {
-        containerRef.current.scrollBy({ left: containerRef.current.offsetWidth / 2, behavior: "smooth" });
-      }
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1], // <-- replace string with cubic-bezier array
     },
-    onSwipedRight: () => {
-      if (containerRef.current) {
-        containerRef.current.scrollBy({ left: -containerRef.current.offsetWidth / 2, behavior: "smooth" });
-      }
-    },
-    trackMouse: true,
-  });
+  },
+};
 
-  const carouselStyles = `
-    @keyframes scroll-left {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
 
-    .animate-scroll {
-      animation: ${isPaused ? "none" : "scroll-left 45s linear infinite"};
-      width: 200%;
-    }
-
-    @media (min-width: 1024px) {
-      .card-item { width: calc(100% / 6); }
-    }
-
-    @media (max-width: 1023px) and (min-width: 640px) {
-      .card-item { width: calc(100% / 4); }
-    }
-
-    @media (max-width: 639px) {
-      .card-item { width: calc(100% / 2); }
-      .animate-scroll { animation-duration: 70s; }
-    }
-  `;
-
+const StunningSection: FC = () => {
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: carouselStyles }} />
-      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#2c5e2b] leading-tight mb-6">
-              More Than Just Innovators
-            </h1>
-            <p className="mt-4 text-xl text-gray-600 max-w-3xl">
-              Empowering our clients with contemporary software solutions that convert enterprises into industry leaders.
-            </p>
-          </div>
+    <section className="relative w-full py-24 px-6 md:px-12 lg:px-20 bg-linear-to-br from-[#e8f4ec] via-[#fdfdfd] to-[#d7e8da] overflow-hidden">
 
-          <div className="mt-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Our 6 Pillars of Continuous Innovation
-            </h2>
-            <div
-              {...handlers}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              ref={containerRef}
-              className="relative overflow-hidden py-4 cursor-grab"
+      {/* Background glow orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-indigo-300/20 blur-3xl rounded-full"></div>
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#2c5e2b] drop-shadow-sm">
+          Excellence Engineered With Purpose
+        </h1>
+
+        <p className="mt-5 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          Explore the six foundational principles that drive our premium
+          quality, innovation, and long-term digital success.
+        </p>
+
+        {/* Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20"
+        >
+          {features.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ y: -8 }}
+              className="p-8 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
-              <div className="flex animate-scroll">
-                {carouselContent.map((card, index) => (
-                  <div key={`carousel-${index}`} className="shrink-0 card-item p-4">
-                    <FeatureCard card={card} />
-                  </div>
-                ))}
+              {/* Icon Circle */}
+              <div
+                className={`w-16 h-16 rounded-2xl bg-linear-to-br ${item.accent} flex items-center justify-center shadow-inner`}
+              >
+                <item.icon size={30} className="text-gray-900" />
               </div>
-            </div>
-          </div>
-        </div>
+
+              <h3 className="mt-6 text-xl font-semibold text-gray-900">
+                {item.title}
+              </h3>
+
+              <p className="mt-3 text-gray-600 leading-relaxed text-sm">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default App;
+export default StunningSection;

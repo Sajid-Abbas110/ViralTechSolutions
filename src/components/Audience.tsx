@@ -68,21 +68,21 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="w-full h-screen flex">
+    <section className="w-full min-h-screen flex flex-col md:flex-row">
       <div
-        className="w-1/2 bg-white flex flex-col justify-center items-start p-12"
+        className="w-full md:w-1/2 bg-white flex flex-col justify-center items-start p-6 md:p-12"
         style={{ color: PRIMARY_DARK }}
       >
         <p
-          className="text-sm uppercase tracking-wide mb-2"
+          className="text-xs md:text-sm uppercase tracking-wide mb-2"
           style={{ color: ACCENT_LIGHT }}
         >
           What We Offer?
         </p>
-        <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-4">
+        <h2 className="text-2xl md:text-4xl font-semibold leading-snug mb-4">
           Upgrade the App Development Experiences For Your Audience
         </h2>
-        <p className="text-gray-700 mb-6">
+        <p className="text-gray-700 mb-6 text-sm md:text-base">
           For more than a decade, we've held the rank of being one of the best
           award-winning mobile app development services providers. We deliver
           apps for multiple purposes using different platforms. Our app
@@ -96,16 +96,21 @@ const ServicesSection: React.FC = () => {
             Let’s Build Together
             </Link>
       </div>
-      <div className="w-1/2 overflow-y-scroll p-12 border-l border-gray-200">
+      <div className=" w-full md:w-1/2 
+        p-6 md:p-12 
+        border-t md:border-t-0 md:border-l border-gray-200
+        md:h-screen 
+        md:overflow-y-scroll    /* ENABLE SCROLL ONLY ON DESKTOP */
+        ">
         {services.map((service, index) => (
           <div key={index} className="mb-20 last:mb-0">
             <h3
-              className="text-xl font-bold mb-2"
+              className="text-lg md:text-xl font-bold mb-2"
               style={{ color: PRIMARY_DARK }}
             >
               {service.title}
             </h3>
-            <p className="text-gray-700">{service.description}</p>
+            <p className="text-gray-700 text-sm md:text-base">{service.description}</p>
             <br />
             <Link
               to="/contact"

@@ -10,6 +10,10 @@ import ContactUs from "./Pages.tsx/ContactUs";
 import OurTeam from "./Pages.tsx/OurTeam";
 import ScrollToTopBar from "./components/ScrollToTopBar";
 import SoftwareDevelopment from "./Pages.tsx/SoftwareDevelopment";
+import GameDevelopment from "./Pages.tsx/GameDevelopment";
+import SEOAndContentWriting from "./Pages.tsx/SEOAndContentWriting";
+import DigitalMarketing from "./Pages.tsx/DigitalMarketing";
+import UIUXDesign from "./Pages.tsx/SoftwareDevelopment";
 
 
 const App = () => {
@@ -28,6 +32,11 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs/>} />
         <Route path="/our-team" element={<OurTeam/>} />
         <Route path="/software-development" element={<SoftwareDevelopment/>} />
+        <Route path="/game-development" element={<GameDevelopment/>} />
+        <Route path="/seo-and-content-writing" element={<SEOAndContentWriting/>} />
+        <Route path="/digital-marketing" element={<DigitalMarketing/>} />
+        <Route path="/uiux-design" element={<UIUXDesign/>} />
+
         
       </Routes>
     </BrowserRouter>

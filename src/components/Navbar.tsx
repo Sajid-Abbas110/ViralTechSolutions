@@ -72,21 +72,21 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const services = [
-    "web-development",
-    "mobile-apps",
-    "graphic-design",
-    "software-development",
-    "game-development",
-    "seo-&-content-writing",
-    "digital-marketing",
-    "ui-ux-design",
+    "Web-Development",
+    "Mobile-Apps",
+    "Graphic-Design",
+    "Software-Development",
+    "Game-Development",
+    "SEO-And-Content-Writing",
+    "Digital-Marketing",
+    "UIUX-Design",
   ];
 
   const prettyName = (txt: string) =>
     txt
       .replace(/-/g, " ")
-      .replace("ui ux", "UI-UX")
-      .replace("seo & content writing", "SEO & Content Writing");
+      // .replace("ui ux", "UI-UX")
+      .replace("seo and content writing", "SEO and Content Writing");
 
   return (
     <nav
